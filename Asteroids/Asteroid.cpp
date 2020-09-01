@@ -1,3 +1,4 @@
+#include <typeinfo> 
 #include "Asteroid.h"
 #include "Graphics.h"
 #include "Random.h"

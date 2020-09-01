@@ -5,6 +5,8 @@
 #include "LevelStart.h"
 #include "PlayingState.h"
 #include "GameOver.h"
+#include "PauseMenuState.h"
+#include "LeaderBoardState.h"
 
 StateLibrary::StateLibrary()
 {
@@ -13,6 +15,8 @@ StateLibrary::StateLibrary()
 	AddState("LevelStart", new LevelStart());
 	AddState("PlayingState", new PlayingState());
 	AddState("GameOver", new GameOver());
+	AddState("PauseMenuState", new PauseMenuState());
+	AddState("LeaderBoardState", new LeaderBoardState());
 }
 
 StateLibrary::~StateLibrary()

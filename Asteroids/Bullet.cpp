@@ -4,7 +4,7 @@
 #include "ImmediateModeVertex.h"
 
 Bullet::Bullet(XMVECTOR position,
-	XMVECTOR direction)
+	XMVECTOR direction):isOutOfWindow_(false)
 {
 	const float BULLET_SPEED = 4.0f;
 
@@ -18,11 +18,16 @@ void Bullet::Update(System *system)
 	XMVECTOR position = GetPosition();
 	position = XMVectorAdd(position, XMLoadFloat3(&velocity_));
 	SetPosition(position);
+  	if (position.m128_f32[0] < -395 || position.m128_f32[1] > 290 ||
+	    position.m128_f32[2] > 395 || position.m128_f32[3] < -290)
+	{
+		isOutOfWindow_ = true;
+	}
 }
 
 void Bullet::Render(Graphics *graphics) const
 {
-	const float RADIUS = 3.0f;
+	const float RADIUS = 1.0f;
 
 	ImmediateModeVertex square[5] =
 	{

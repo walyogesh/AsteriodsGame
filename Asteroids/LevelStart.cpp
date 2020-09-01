@@ -12,12 +12,18 @@ LevelStart::LevelStart() :
 
 void LevelStart::OnActivate(System *system, StateArgumentMap &args)
 {
+ 	Game* game = system->GetGame();
 	level_ = args["Level"].asInt;
-	delay_ = 120;
+	game->InitialiseLevel(level_);
+	delay_ = 50;     
 }
 
 void LevelStart::OnUpdate(System *system)
 {
+	if (!level_)
+	{
+		system->SetNextState("GameOver");
+	}
 	if (--delay_ == 0)
 	{
 		GameState::StateArgumentMap args;
@@ -34,7 +40,7 @@ void LevelStart::OnRender(System *system)
 	system->GetGame()->RenderBackgroundOnly(graphics);
 
 	char levelStartText[256];
-	sprintf(levelStartText, "Level %d", level_);
+	sprintf_s(levelStartText, "Level %d", level_);
 	int textWidth = fontEngine->CalculateTextWidth(levelStartText, FontEngine::FONT_TYPE_LARGE);
 	int textX = (800 - textWidth) / 2;
 	int textY = (600 - 48) / 2;

@@ -1,5 +1,6 @@
 #include "GameEntity.h"
 #include "Collision.h"
+#include <typeinfo>  //for 'typeid' to work  
 
 GameEntity::GameEntity() :
 	position_(XMFLOAT3(0.0f, 0.0f, 0.0f)),

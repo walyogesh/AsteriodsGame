@@ -15,6 +15,7 @@ MainMenu::~MainMenu()
 
 void MainMenu::OnActivate(System *system, StateArgumentMap &args)
 {
+	system->GetGame()->ClearScore();
 }
 
 void MainMenu::OnUpdate(System *system)

@@ -1,6 +1,7 @@
 #include "Collision.h"
 #include "Collider.h"
 #include "Game.h"
+#include "GameEntity.h"
 #include <functional>
 
 Collision::Collision()
@@ -69,7 +70,8 @@ void Collision::DoCollisions(Game *game) const
 			Collider *colliderB = *colliderBIt;
 			if (CollisionTest(colliderA, colliderB))
 			{
-				game->DoCollision(colliderA->entity, colliderB->entity);
+                game->DoCollision(colliderA->entity, colliderB->entity);
+                return;
 			}
 		}
 	}
@@ -77,10 +79,8 @@ void Collision::DoCollisions(Game *game) const
 
 bool Collision::CollisionTest(Collider *a, Collider *b)
 {
-	if (a->enabled == false)
-		return false;
-	if (b->enabled == false)
-		return false;
+	if (!(a->enabled) || !(b->enabled) || typeid (*(a->entity)) == typeid(*(b->entity) ))
+	return false;
 
 	XMVECTOR diff = XMVectorSubtract(XMLoadFloat3(&a->position), XMLoadFloat3(&b->position));
 	float distance = XMVectorGetX(XMVector3Length(diff));

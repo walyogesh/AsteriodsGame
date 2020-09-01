@@ -14,21 +14,21 @@
     <ProjectGuid>{B11EFBF9-4454-4228-A8FC-FDCF2DDEF663}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>AsteroidsTest</RootNamespace>
-    <WindowsTargetPlatformVersion>$(LatestTargetPlatformVersion)</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -89,6 +89,7 @@
     <ClCompile Include="DynamicVertexBuffers.cpp" />
     <ClCompile Include="FontEngine.cpp" />
     <ClCompile Include="ImmediateMode.cpp" />
+    <ClCompile Include="LeaderBoardState.cpp" />
     <ClCompile Include="Maths.cpp" />
     <ClCompile Include="MatrixBuffer.cpp" />
     <ClCompile Include="OrthoCamera.cpp" />
@@ -105,6 +106,7 @@
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="MainWindow.cpp" />
     <ClCompile Include="GameState.cpp" />
+    <ClCompile Include="PauseMenuState.cpp" />
     <ClCompile Include="PixelShader.cpp" />
     <ClCompile Include="PlayingState.cpp" />
     <ClCompile Include="Random.cpp" />
@@ -127,6 +129,7 @@
     <ClInclude Include="FontEngine.h" />
     <ClInclude Include="ImmediateMode.h" />
     <ClInclude Include="ImmediateModeVertex.h" />
+    <ClInclude Include="LeaderBoardState.h" />
     <ClInclude Include="Maths.h" />
     <ClInclude Include="MatrixBuffer.h" />
     <ClInclude Include="OrthoCamera.h" />
@@ -142,6 +145,7 @@
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="MainWindow.h" />
     <ClInclude Include="GameState.h" />
+    <ClInclude Include="PauseMenuState.h" />
     <ClInclude Include="PixelShader.h" />
     <ClInclude Include="PlayingState.h" />
     <ClInclude Include="Random.h" />

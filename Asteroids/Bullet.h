@@ -11,9 +11,10 @@ public:
 
 	void Update(System *system);
 	void Render(Graphics *graphics) const;
+	bool IsOutOfWindow() const { return isOutOfWindow_; }
 
 private:
-
+	bool isOutOfWindow_;
 	XMFLOAT3 velocity_;
 
 };

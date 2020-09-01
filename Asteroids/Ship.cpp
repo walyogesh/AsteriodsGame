@@ -48,10 +48,10 @@ void Ship::Render(Graphics *graphics) const
 {
 	ImmediateModeVertex axis[8] =
 	{
-		{0.0f, -5.0f, 0.0f, 0xffffffff}, {0.0f, 10.0f, 0.0f, 0xffffffff},
-		{-5.0f, 0.0f, 0.0f, 0xffffffff}, {5.0f, 0.0f, 0.0f, 0xffffffff},
-		{0.0f, 10.0f, 0.0f, 0xffffffff}, {-5.0f, 5.0f, 0.0f, 0xffffffff},
-		{0.0f, 10.0f, 0.0f, 0xffffffff}, {5.0f, 5.0f, 0.0f, 0xffffffff},
+		{0.0f, -5.0f, 0.0f, 0xff0000ff}, {0.0f, 10.0f, 0.0f, 0xff0000ff},
+		{-5.0f, 0.0f, 0.0f, 0xff0000ff}, {5.0f, 0.0f, 0.0f, 0xff0000ff},
+		{0.0f, 10.0f, 0.0f, 0xff0000ff}, {-5.0f, 5.0f, 0.0f, 0xff0000ff},
+		{0.0f, 10.0f, 0.0f, 0xff0000ff}, {5.0f, 5.0f, 0.0f, 0xff0000ff},
 	};
 
 	XMMATRIX rotationMatrix = XMMatrixRotationZ(rotation_);

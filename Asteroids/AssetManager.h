@@ -2,6 +2,7 @@
 #define ASSETMANAGER_H_INCLUDED
 
 #include <string>
+#include <map>
 
 template <typename ASSET>
 class AssetManager
@@ -19,7 +20,7 @@ private:
 	AssetManager(const AssetManager &);
 	void operator=(const AssetManager &);
 
-	typedef std::map<std::string, ASSET *> AssetMap;
+	typedef std::map<std::string, ASSET*> AssetMap;
 	AssetMap assets_;
 };
 
