@@ -1,4 +1,4 @@
-# AsteriodsGame
+# AsteroidsGame
 
 About The Assignment :
 I have used Visual Studio 2019 along with (Default c++14).The 
